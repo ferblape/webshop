@@ -1,5 +1,6 @@
 class Product < ActiveRecord::Base
-  attr_accessible :brand, :category, :description, :name, :price
+  attr_accessible :brand, :category, :description, :name,
+    :price, :tags_attributes
 
   has_many :reviews, dependent: :destroy
   has_many :tags

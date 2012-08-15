@@ -25,6 +25,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   def new
     @product = Product.new
+    @product.tags.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,6 +36,7 @@ class ProductsController < ApplicationController
   # GET /products/1/edit
   def edit
     @product = Product.find(params[:id])
+    @product.tags.build
   end
 
   # POST /products

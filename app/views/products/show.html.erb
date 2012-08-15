@@ -25,6 +25,11 @@
   <%= @product.description %>
 </p>
 
+<p>
+  <b>Tags:</b>
+  <%= @product.tags.map(&:name).join(', ') %>
+</p>
+
 <h2>Add your review</h2>
 <%= render 'reviews/form', product: @product %>
 
