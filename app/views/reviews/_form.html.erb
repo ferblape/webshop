@@ -6,7 +6,7 @@
 
   <div class="field">
     <%= f.label :rating %><br />
-    <%= f.select :rating, (1..5).map {|n| [n,n] } %>
+    <%= f.select :rating, rating_options_for_select %>
   </div>
 
   <div class="field">

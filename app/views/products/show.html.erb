@@ -27,14 +27,14 @@
 
 <p>
   <b>Tags:</b>
-  <%= @product.tags.map(&:name).join(', ') %>
+  <%= tags_names @product %>
 </p>
-
-<h2>Add your review</h2>
-<%= render 'reviews/form', product: @product %>
 
 <h2>Reviews</h2>
 <%= render @product.reviews %>
+
+<h2>Add your review</h2>
+<%= render 'reviews/form', product: @product %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
