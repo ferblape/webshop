@@ -2,4 +2,8 @@
   <h3><%= review.summary %></h3>
   <%= simple_format review.description %>
   <p>Rating <%= review.rating %></p>
+  <p><%= link_to 'Destroy', [review.product, review],
+     :confirm => 'Are you sure?',
+     :method => :delete %>
+  </p>
 </div>
