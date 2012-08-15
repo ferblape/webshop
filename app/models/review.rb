@@ -1,4 +1,10 @@
 class Review < ActiveRecord::Base
-  belongs_to :product
   attr_accessible :description, :rating, :summary
+
+  belongs_to :product
+
+  validates :summary, presence: true,
+                      length: { minimum: 3 }
+  validates :rating,  presence: true,
+                      numericality: true
 end
