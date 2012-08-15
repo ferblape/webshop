@@ -25,6 +25,8 @@
   <%= @product.description %>
 </p>
 
+<h2>Add your review</h2>
+<%= render 'reviews/form', :product => @product, :review => @review %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

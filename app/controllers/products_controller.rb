@@ -14,6 +14,7 @@ class ProductsController < ApplicationController
   # GET /products/1.json
   def show
     @product = Product.find(params[:id])
+    @review = @product.reviews.build
 
     respond_to do |format|
       format.html # show.html.erb

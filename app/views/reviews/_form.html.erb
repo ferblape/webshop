@@ -1,0 +1,19 @@
+<%= form_for [product, review] do |f| %>
+  <div class="field">
+    <%= f.label :summary %><br />
+    <%= f.text_field :summary %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating %><br />
+    <%= f.select :rating, (1..5).map {|n| [n,n] } %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
