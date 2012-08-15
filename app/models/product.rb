@@ -1,7 +1,11 @@
 class Product < ActiveRecord::Base
   attr_accessible :brand, :category, :description, :name, :price
 
-  has_many :reviews, :dependent => :destroy
+  has_many :reviews, dependent: :destroy
+  has_many :tags
+
+  accepts_nested_attributes_for :tags, allow_destroy: :true,
+                                       reject_if: :all_blank
 
   validates :name,  presence: true,
                     length: { minimum: 3 }
