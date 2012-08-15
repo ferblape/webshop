@@ -5,7 +5,7 @@
     <%= tag_form.text_field :name %>
   </div>
 
-  <% if tag_form.object.present? && tag_form.object.new_record? %>
+  <% if tag_form.object.present? && tag_form.object.persisted? %>
     <div class="field">
       <%= tag_form.label :_destroy, 'Remove:' %>
       <%= tag_form.check_box :_destroy %>
