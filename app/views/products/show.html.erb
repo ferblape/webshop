@@ -26,7 +26,11 @@
 </p>
 
 <h2>Add your review</h2>
-<%= render 'reviews/form', :product => @product, :review => @review %>
+<%= render 'reviews/form', product: @product,
+                           review: @product.reviews.build %>
+
+<h2>Reviews</h2>
+<%= render @product.reviews %>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
