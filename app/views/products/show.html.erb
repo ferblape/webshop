@@ -26,8 +26,7 @@
 </p>
 
 <h2>Add your review</h2>
-<%= render 'reviews/form', product: @product,
-                           review: @product.reviews.build %>
+<%= render 'reviews/form', product: @product %>
 
 <h2>Reviews</h2>
 <%= render @product.reviews %>
