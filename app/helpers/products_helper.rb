@@ -1,6 +1,6 @@
 module ProductsHelper
 
   def tags_names(product)
-    product.tags.map(&:name).join(', ')
+    product.tags.pluck(:name).join(', ')
   end
 end
