@@ -1,4 +1,15 @@
 Webshop::Application.routes.draw do
+
+  get "login" => "sessions#new", :as => "login"
+  get "logout" => "sessions#destroy", :as => "logout"
+
+  get "signup" => "users#new", :as => "signup"
+
+  root :to => "products#index"
+
+  resources :users
+  resources :sessions
+
   resources :products do
     resources :reviews
   end
