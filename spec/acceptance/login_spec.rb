@@ -37,7 +37,7 @@ feature 'Login', %q{
     fill_in 'Password', with: 'wadus'
     click 'Login'
 
-    page.should have_content 'login invalid'
+    page.should have_content 'Invalid email or password'
     
     current_path.should == login_page
   end
