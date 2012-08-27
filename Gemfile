@@ -15,7 +15,7 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'therubyracer', '0.10.2'
   gem 'coffee-rails', '~> 3.2.1'
-
+  gem "twitter-bootstrap-rails"
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
@@ -40,3 +40,6 @@ gem 'bcrypt-ruby', '3.0.1'
 
 # To use debugger
 # gem 'debugger'
+#
+
+gem 'quiet_assets', :group => :development
