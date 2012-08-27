@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def login_required
-    current_user || redirect_to(root_url, :notice => 'login required')
+    current_user || redirect_to(login_url, :notice => 'login required')
   end
 
   def current_user
