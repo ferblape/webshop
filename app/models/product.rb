@@ -26,4 +26,8 @@ class Product < ActiveRecord::Base
                     length: { minimum: 3 }
   validates :price, presence: true,
                     numericality: true
+
+  def nicename
+    name.downcase.gsub(/[^a-z]/, "-")
+  end
 end
