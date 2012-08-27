@@ -1,0 +1,5 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+pepe:
+  email: hello@madridrb.com
+  password_digest: '$2a$10$M0BuT4xDwAtNLST/03qS5u1jkQKvnBPsnv5u8CvYqKkL.R2Uf7j7i'

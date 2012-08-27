@@ -2,9 +2,11 @@ require 'acceptance/acceptance_helper'
 
 feature 'Login', %q{
   Given that I want to protect the products from not logged users
-  When click in "New product"
+  When click in 'New product'
   Then I should be redirected to login form
 } do
+
+  fixtures :users
 
   scenario 'Should show login page when clicking new product link' do
     visit '/'
@@ -15,7 +17,18 @@ feature 'Login', %q{
     page.should have_content 'login required'
   end
 
-  scenario 'Should get logged in if I introduce valid credentials'
+  scenario 'Should get logged in if I introduce valid credentials' do
+    visit '/login'
+
+    page.should have_content 'Log in'
+    fill_in 'Email', with: 'hello@madridrb.com'
+    fill_in 'Password', with: 'wadus'
+    click 'Login'
+
+    current_path.should == '/'
+    page.should have_content 'Hello hello@madrid.rb'
+    page.should have_content 'Logout'
+  end
 
   scenario 'Should get logged in if I introduce invalid credentials'
 
