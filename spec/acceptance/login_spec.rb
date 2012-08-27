@@ -26,7 +26,7 @@ feature 'Login', %q{
     click 'Login'
 
     current_path.should == '/'
-    page.should have_content 'Hello hello@madrid.rb'
+    page.should have_content 'Hello hello@madridrb.com'
     page.should have_content 'Logout'
   end
 
