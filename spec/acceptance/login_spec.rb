@@ -12,6 +12,7 @@ feature 'Login', %q{
     
     current_path.should == '/login'
     page.should have_content 'Log in'
+    page.should have_content 'login required'
   end
 
   scenario 'Should get logged in if I introduce valid credentials'
