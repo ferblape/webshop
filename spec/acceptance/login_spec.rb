@@ -30,6 +30,16 @@ feature 'Login', %q{
     page.should have_content 'Logout'
   end
 
-  scenario 'Should get logged in if I introduce invalid credentials'
+  scenario 'Should not get logged in if I introduce invalid credentials' do
+    visit '/login'
+
+    fill_in 'Email', with: 'goodbye@madridrb.com'
+    fill_in 'Password', with: 'wadus'
+    click 'Login'
+
+    page.should have_content 'login invalid'
+    
+    current_path.should == login_page
+  end
 
 end
